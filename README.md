@@ -1,1 +1,1 @@
-# major_rag_optimisations
+# MedRAGent
