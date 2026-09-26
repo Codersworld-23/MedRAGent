@@ -1,222 +1,205 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[codz]
-*$py.class
+# ============================================================
+# PYTHON
+# ============================================================
 
-# C extensions
+__pycache__/
+*.py[cod]
+*$py.class
 *.so
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#   Usually these files are written by a python script from a template
-#   before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py.cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-# Pipfile.lock
-
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-# uv.lock
-
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-# poetry.lock
-# poetry.toml
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
-#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
-# pdm.lock
-# pdm.toml
-.pdm-python
-.pdm-build/
-
-# pixi
-#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
-# pixi.lock
-#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
-#   in the .venv directory. It is recommended not to include this directory in version control.
-.pixi
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# Redis
-*.rdb
-*.aof
-*.pid
-
-# RabbitMQ
-mnesia/
-rabbitmq/
-rabbitmq-data/
-
-# ActiveMQ
-activemq-data/
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.envrc
-.venv
-env/
+# Python environments
+.venv/
 venv/
+env/
 ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
 
-# Rope project settings
-.ropeproject
+# ============================================================
+# JUPYTER / NOTEBOOKS
+# ============================================================
 
-# mkdocs documentation
-/site
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# ============================================================
+# IDE / EDITOR
+# ============================================================
 
-# Pyre type checker
-.pyre/
+.vscode/
+.idea/
 
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
-#   JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#   be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#   and can be added to the global gitignore or merged into this file.  For a more nuclear
-#   option (not recommended) you can uncomment the following to ignore the entire idea folder.
-# .idea/
-
-# Abstra
-#   Abstra is an AI-powered process automation framework.
-#   Ignore directories containing user credentials, local state, and settings.
-#   Learn more at https://abstra.io/docs
-.abstra/
-
-# Visual Studio Code
-#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
-#   that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#   and can be added to the global gitignore or merged into this file. However, if you prefer, 
-#   you could uncomment the following to ignore the entire vscode folder
-# .vscode/
-# Temporary file for partial code execution
+# VS Code temporary execution file
 tempCodeRunnerFile.py
 
-# Ruff stuff:
-.ruff_cache/
+# ============================================================
+# DATASETS
+# ============================================================
 
-# PyPI configuration file
-.pypirc
+# Medical QA datasets
+/datasets/
 
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
+# Local / downloaded data
+data/
+data/raw/
+data/processed/
+data/external/
 
-# Streamlit
+# ============================================================
+# RESEARCH PAPERS
+# ============================================================
+
+# Downloaded papers and surveys
+/papers_and_surveys/
+
+# ============================================================
+# VECTOR DATABASES / INDEXES
+# ============================================================
+
+# Generated retrieval indexes
+/indexes/
+
+# Vector database files
+*.faiss
+*.index
+*.pkl
+*.pickle
+
+# Chroma
+/chroma/
+chroma.sqlite3
+
+# LanceDB
+.lancedb/
+
+# Qdrant local storage
+/qdrant_storage/
+
+# ============================================================
+# MACHINE LEARNING / MODEL FILES
+# ============================================================
+
+# Downloaded model weights
+/models/
+
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# HuggingFace cache
+.huggingface/
+.cache/huggingface/
+
+# Sentence Transformers cache
+.cache/
+
+# ============================================================
+# EXPERIMENT OUTPUTS
+# ============================================================
+
+# Generated experiment results
+/experiments/results/
+
+# Generated analysis
+/experiments/analysis/
+
+# Experiment logs
+*.log
+logs/
+
+# Generated predictions
+predictions/
+*.jsonl
+
+# CSV files generated during experiments
+# Uncomment if you don't want ANY generated CSVs tracked
+# *.csv
+
+# ============================================================
+# TEST / COVERAGE
+# ============================================================
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+
+# ============================================================
+# BUILD / PACKAGING
+# ============================================================
+
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+MANIFEST
+
+# ============================================================
+# OS FILES
+# ============================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ============================================================
+# LOCAL CONFIGURATION
+# ============================================================
+
+# Local experiment configuration
+# Keep the shared configs in experiments/configs/
+# but ignore personal overrides.
+
+config.local.yaml
+config.local.yml
+
+# ============================================================
+# TEMPORARY FILES
+# ============================================================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ============================================================
+# STREAMLIT (IF USED LATER)
+# ============================================================
+
 .streamlit/secrets.toml
 
-# Local research datasets and downloaded papers
-/datasets/
-/papers_and_surveys/
+# ============================================================
+# RUFF / TYPE CHECKERS
+# ============================================================
+
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
