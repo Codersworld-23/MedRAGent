@@ -203,3 +203,8 @@ config.local.yml
 .dmypy.json
 .pyre/
 .pytype/
+
+
+## some documentations
+*.md
+!README.md
