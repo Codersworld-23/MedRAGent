@@ -1,0 +1,5 @@
+numpy
+rank-bm25
+faiss-cpu
+sentence-transformers
+pyyaml
