@@ -55,8 +55,6 @@ data/external/
 # RESEARCH PAPERS
 # ============================================================
 
-# Downloaded papers and surveys
-/papers_and_surveys/
 
 # ============================================================
 # VECTOR DATABASES / INDEXES
