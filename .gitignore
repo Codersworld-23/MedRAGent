@@ -206,6 +206,5 @@ config.local.yml
 ## some documentations
 *.md
 !README.md
-!MEDRAGent_Current_Project_Status.md
-
-MedRAGent_Project_Implementation_Summary.docx
+MedRAGent_Project_Workflow.md
+descr.docx
