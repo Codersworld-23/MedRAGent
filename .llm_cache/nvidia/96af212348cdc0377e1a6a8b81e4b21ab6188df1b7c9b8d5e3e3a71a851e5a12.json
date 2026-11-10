@@ -1,0 +1,1 @@
+{"model": "nvidia:z-ai/glm-5.3-flash", "messages": [{"role": "system", "content": "Reply with exactly one word."}, {"role": "user", "content": "Say OK. (judge check)"}], "params": {"temperature": 0.2, "max_tokens": 200}, "text": "OK"}

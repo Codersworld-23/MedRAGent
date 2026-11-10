@@ -1,0 +1,189 @@
+{
+  "data_designer": {
+    "columns": [
+      {
+        "name": "difficulty",
+        "drop": false,
+        "column_type": "sampler",
+        "skip": null,
+        "propagate_skip": true,
+        "sampler_type": "category",
+        "params": {
+          "values": [
+            "easy",
+            "medium",
+            "hard"
+          ],
+          "weights": [
+            0.3,
+            0.5,
+            0.2
+          ],
+          "sampler_type": "category"
+        },
+        "conditional_params": {},
+        "convert_to": null
+      },
+      {
+        "name": "qa",
+        "drop": false,
+        "column_type": "llm-structured",
+        "skip": null,
+        "propagate_skip": true,
+        "prompt": "You are building a retrieval benchmark for a psychiatry textbook RAG system.\n\nPASSAGES, each tagged with an id:\n{{ context }}\n\nWrite exactly one high-quality question that {{ type_instr }}.\n\nDifficulty: {{ difficulty }}\n- easy: direct factual lookup\n- medium: requires understanding and paraphrase\n- hard: requires synthesis, comparison, or careful exclusion\n\nRules:\n- The question must be fully standalone.\n- Never mention passages, excerpts, context, source ids, or the phrase \"according to\".\n- Paraphrase heavily; do not copy distinctive wording from the passages.\n- The answer must be fully supported by the passages and must not use outside knowledge.\n- Do not ask about headings, page numbers, OCR artifacts, formatting, or fragments cut off at passage edges.\n- For used_ids, list only ids that are required to answer correctly.",
+        "model_alias": "gen",
+        "system_prompt": null,
+        "multi_modal_context": null,
+        "tool_alias": null,
+        "with_trace": "none",
+        "extract_reasoning_content": false,
+        "output_format": {
+          "properties": {
+            "question": {
+              "description": "Standalone user-style question; no passage or id references.",
+              "title": "Question",
+              "type": "string"
+            },
+            "answer": {
+              "description": "One to three concise sentences, fully supported by the passages.",
+              "title": "Answer",
+              "type": "string"
+            },
+            "used_ids": {
+              "description": "Only the passage ids required to answer.",
+              "items": {
+                "type": "string"
+              },
+              "title": "Used Ids",
+              "type": "array"
+            }
+          },
+          "required": [
+            "question",
+            "answer",
+            "used_ids"
+          ],
+          "title": "QA",
+          "type": "object"
+        }
+      },
+      {
+        "name": "judge",
+        "drop": false,
+        "column_type": "llm-judge",
+        "skip": null,
+        "propagate_skip": true,
+        "prompt": "PASSAGES:\n{{ context }}\n\nQUESTION:\n{{ qa.question }}\n\nANSWER:\n{{ qa.answer }}\n\nEvaluate strictly against the passages only. Penalize outside knowledge, vague support, copied wording,\nquestions that depend on seeing the passage, and answers that omit important caveats.",
+        "model_alias": "judge",
+        "system_prompt": null,
+        "multi_modal_context": null,
+        "tool_alias": null,
+        "with_trace": "none",
+        "extract_reasoning_content": false,
+        "scores": [
+          {
+            "name": "Groundedness",
+            "description": "Is every answer claim fully supported by the passages?",
+            "options": {
+              "1": "Unsupported",
+              "2": "Mostly unsupported",
+              "3": "Partly supported",
+              "4": "Mostly supported",
+              "5": "Fully supported"
+            }
+          },
+          {
+            "name": "Standalone",
+            "description": "Does the question make sense without seeing the passages and avoid source references?",
+            "options": {
+              "1": "Depends on the passages",
+              "3": "Somewhat standalone",
+              "5": "Fully standalone"
+            }
+          },
+          {
+            "name": "RetrievalValue",
+            "description": "Would this question be useful for testing retrieval rather than being trivial or malformed?",
+            "options": {
+              "1": "Not useful",
+              "3": "Somewhat useful",
+              "5": "Very useful"
+            }
+          }
+        ]
+      },
+      {
+        "name": "context",
+        "drop": false,
+        "column_type": "seed-dataset",
+        "skip": null,
+        "propagate_skip": true
+      },
+      {
+        "name": "chunk_ids",
+        "drop": false,
+        "column_type": "seed-dataset",
+        "skip": null,
+        "propagate_skip": true
+      },
+      {
+        "name": "question_type",
+        "drop": false,
+        "column_type": "seed-dataset",
+        "skip": null,
+        "propagate_skip": true
+      },
+      {
+        "name": "type_instr",
+        "drop": false,
+        "column_type": "seed-dataset",
+        "skip": null,
+        "propagate_skip": true
+      }
+    ],
+    "model_configs": [
+      {
+        "alias": "gen",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "inference_parameters": {
+          "generation_type": "chat-completion",
+          "max_parallel_requests": 4,
+          "timeout": null,
+          "extra_body": null,
+          "temperature": 0.6,
+          "top_p": null,
+          "max_tokens": 4096
+        },
+        "provider": "nvidia",
+        "skip_health_check": false
+      },
+      {
+        "alias": "judge",
+        "model": "openai/gpt-oss-20b",
+        "inference_parameters": {
+          "generation_type": "chat-completion",
+          "max_parallel_requests": 4,
+          "timeout": null,
+          "extra_body": null,
+          "temperature": 0.1,
+          "top_p": null,
+          "max_tokens": 4096
+        },
+        "provider": "nvidia",
+        "skip_health_check": false
+      }
+    ],
+    "tool_configs": [],
+    "seed_config": {
+      "source": {
+        "seed_type": "df"
+      },
+      "sampling_strategy": "ordered",
+      "selection_strategy": null
+    },
+    "constraints": null,
+    "profilers": null,
+    "processors": null
+  },
+  "library_version": "0.9.4"
+}

@@ -1,0 +1,113 @@
+{
+  "actual_num_records": 180,
+  "buffer_size": 1000,
+  "column_statistics": [
+    {
+      "column_name": "difficulty",
+      "column_type": "sampler",
+      "distribution": {
+        "histogram": {
+          "categories": [
+            "medium",
+            "easy",
+            "hard"
+          ],
+          "counts": [
+            90,
+            53,
+            37
+          ]
+        },
+        "least_common_value": "hard",
+        "most_common_value": "medium"
+      },
+      "distribution_type": "categorical",
+      "num_null": 0,
+      "num_records": 180,
+      "num_unique": 3,
+      "pyarrow_dtype": "string",
+      "sampler_type": "category",
+      "simple_dtype": "string"
+    },
+    {
+      "column_name": "qa",
+      "column_type": "llm-structured",
+      "input_tokens_mean": 612.08,
+      "input_tokens_median": 552.5,
+      "input_tokens_stddev": 153.6,
+      "num_null": 0,
+      "num_records": 180,
+      "num_unique": 180,
+      "output_tokens_mean": 107.78,
+      "output_tokens_median": 104.0,
+      "output_tokens_stddev": 33.18,
+      "pyarrow_dtype": "struct<question: string, answer: string, used_ids: list<element: string>>",
+      "simple_dtype": "dict"
+    },
+    {
+      "column_name": "judge",
+      "column_type": "llm-judge",
+      "input_tokens_mean": 1045.59,
+      "input_tokens_median": 983.0,
+      "input_tokens_stddev": 156.81,
+      "num_null": 0,
+      "num_records": 180,
+      "num_unique": 180,
+      "output_tokens_mean": 179.09,
+      "output_tokens_median": 178.0,
+      "output_tokens_stddev": 35.84,
+      "pyarrow_dtype": "struct<Groundedness: struct<reasoning: string, score: int64>, Standalone: struct<reasoning: string, score: int64>, RetrievalValue: struct<reasoning: string, score: int64>>",
+      "simple_dtype": "dict"
+    },
+    {
+      "column_name": "context",
+      "column_type": "seed-dataset",
+      "num_null": 0,
+      "num_records": 180,
+      "num_unique": 180,
+      "pyarrow_dtype": "string",
+      "simple_dtype": "string"
+    },
+    {
+      "column_name": "chunk_ids",
+      "column_type": "seed-dataset",
+      "num_null": 0,
+      "num_records": 180,
+      "num_unique": 180,
+      "pyarrow_dtype": "string",
+      "simple_dtype": "string"
+    },
+    {
+      "column_name": "question_type",
+      "column_type": "seed-dataset",
+      "num_null": 0,
+      "num_records": 180,
+      "num_unique": 8,
+      "pyarrow_dtype": "string",
+      "simple_dtype": "string"
+    },
+    {
+      "column_name": "type_instr",
+      "column_type": "seed-dataset",
+      "num_null": 0,
+      "num_records": 180,
+      "num_unique": 7,
+      "pyarrow_dtype": "string",
+      "simple_dtype": "string"
+    }
+  ],
+  "config_hash": "sha256:889a41e96f7de841eb35d47f6261049a4628438ba07a367bb06a5fbfb12f536a",
+  "config_hash_algo": "sha256",
+  "config_hash_version": 2,
+  "dataset_name": "medx_rag_eval",
+  "file_paths": {
+    "parquet-files": [
+      "parquet-files\\batch_00000.parquet"
+    ]
+  },
+  "num_completed_batches": 1,
+  "original_target_num_records": 180,
+  "preserve_dropped_columns": true,
+  "target_num_records": 180,
+  "total_num_batches": 1
+}
