@@ -1,0 +1,57 @@
+{
+  "manifest_version": 1,
+  "generated_at_utc": "2026-10-11T06:47:49.788068+00:00",
+  "project_root": "E:\\PEC\\7th sem\\major\\MedRAGent",
+  "python": {
+    "version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "dependencies": {
+    "numpy": "2.5.3",
+    "rank-bm25": "0.2.2",
+    "faiss-cpu": "1.15.1",
+    "sentence-transformers": "6.1.0",
+    "pyyaml": "6.0.3"
+  },
+  "datasets": {
+    "medqa_us": {
+      "file": {
+        "path": "datasets\\MedQA\\questions\\US\\dev.jsonl",
+        "bytes": 1298185,
+        "sha256": "6bdc019180ebf82908c5690b6266898341fee5fd3b807ed0201c39c93f3424c6"
+      },
+      "record_count": 1272,
+      "schema": [
+        "id",
+        "question",
+        "options",
+        "answer_index",
+        "split",
+        "source_file"
+      ],
+      "split": "dev",
+      "answer_index_min": 0,
+      "answer_index_max": 4,
+      "duplicate_questions": 0
+    },
+    "medrag_psichiatry_dsm5": {
+      "file": {
+        "path": "datasets\\MedRAG\\chunk\\Psichiatry_DSM-5.jsonl",
+        "bytes": 6732065,
+        "sha256": "3a7b2232b2dbb642c06fdf8ea8926c8a69aeb05f76b43b7e71d79081b29f7171"
+      },
+      "record_count": 4057,
+      "schema": [
+        "chunk_id",
+        "title",
+        "text",
+        "source_file",
+        "metadata"
+      ],
+      "unique_titles": 1,
+      "total_text_characters": 3110249,
+      "duplicate_texts": 1
+    }
+  }
+}
