@@ -1,0 +1,23 @@
+{
+  "Flat Dense": {
+    "Hit (source passage found)": 0.782,
+    "Recall of source passages": 0.665,
+    "MRR": 0.523,
+    "Correctness (1\u20135)": 3.96,
+    "Faithfulness (1\u20135)": 3.96
+  },
+  "Hierarchical Collapsed": {
+    "Hit (source passage found)": 0.769,
+    "Recall of source passages": 0.652,
+    "MRR": 0.516,
+    "Correctness (1\u20135)": 3.92,
+    "Faithfulness (1\u20135)": 3.92
+  },
+  "Hierarchical Traversal": {
+    "Hit (source passage found)": 0.372,
+    "Recall of source passages": 0.314,
+    "MRR": 0.101,
+    "Correctness (1\u20135)": 3.88,
+    "Faithfulness (1\u20135)": 3.88
+  }
+}

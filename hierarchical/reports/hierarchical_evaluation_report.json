@@ -1,0 +1,44 @@
+{
+  "Flat_Dense_Baseline": {
+    "Strategy": "Flat_Dense_Baseline",
+    "Accuracy_pct": 0.0,
+    "Correct": "0/25",
+    "Mean_Faithfulness": 0.78,
+    "Hallucination_Rate": 0.22,
+    "Mean_Relevance": 0.146,
+    "Top_Relevance": 0.189,
+    "BLEU_Score": 0.002,
+    "ROUGE_L_Score": 0.0403,
+    "Layer_0_Nodes_Retrieved": 125,
+    "Layer_1_Nodes_Retrieved": 0,
+    "Latency_sec": 1.69
+  },
+  "RAPTOR_Collapsed_Tree": {
+    "Strategy": "RAPTOR_Collapsed_Tree",
+    "Accuracy_pct": 0.0,
+    "Correct": "0/25",
+    "Mean_Faithfulness": 0.76,
+    "Hallucination_Rate": 0.24,
+    "Mean_Relevance": 0.147,
+    "Top_Relevance": 0.189,
+    "BLEU_Score": 0.002,
+    "ROUGE_L_Score": 0.0403,
+    "Layer_0_Nodes_Retrieved": 123,
+    "Layer_1_Nodes_Retrieved": 2,
+    "Latency_sec": 1.11
+  },
+  "RAPTOR_Tree_Traversal": {
+    "Strategy": "RAPTOR_Tree_Traversal",
+    "Accuracy_pct": 0.0,
+    "Correct": "0/25",
+    "Mean_Faithfulness": 0.72,
+    "Hallucination_Rate": 0.28,
+    "Mean_Relevance": 0.151,
+    "Top_Relevance": 0.193,
+    "BLEU_Score": 0.0017,
+    "ROUGE_L_Score": 0.0321,
+    "Layer_0_Nodes_Retrieved": 75,
+    "Layer_1_Nodes_Retrieved": 50,
+    "Latency_sec": 3.35
+  }
+}
