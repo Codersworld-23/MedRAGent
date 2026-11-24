@@ -1,0 +1,134 @@
+{
+  "package_version": "baseline_v1",
+  "repository": "Codersworld-23/MedRAGent",
+  "commit": "2d1aa3727a6cc5ba512c57e4cf1f82e1421300c1",
+  "branch": "main",
+  "status": "M .gitignore\n M evaluations/common_evaluation.py\n M evaluations/retrieval_metrics.py\n M evaluations/statistical_tests.py\n M scripts/run_bm25_rag.py\n M scripts/run_dense_rag.py\n M scripts/run_hybrid_rag.py\n M scripts/run_llm_only.py\n M src/scope.py\n M tests/test_common_evaluation.py\n M tests/test_scope.py\n?? MedRAGent_Project_Workflow.md\n?? scripts/build_publication_package.py\n?? scripts/export_grounding_review.py\n?? scripts/freeze_baseline.py\n?? scripts/review_scope_annotations.py\n?? scripts/run_frozen_dev_baseline.py\n?? scripts/run_frozen_test_baseline.py\n?? scripts/validate_grounding_review.py\n?? src/medragent/\n?? tests/test_frozen_test_runner.py\n?? tests/test_grounding_review.py\n?? tests/test_statistical_tests.py",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "requirements": [
+    "numpy",
+    "rank-bm25",
+    "faiss-cpu",
+    "sentence-transformers",
+    "pyyaml"
+  ],
+  "freeze": {
+    "freeze_status": "test_ready",
+    "execute_status": "completed",
+    "split": "test",
+    "question_count": 1273,
+    "question_path": "E:\\PEC\\7th sem\\major\\MedRAGent\\datasets\\MedQA\\questions\\US\\test.jsonl",
+    "question_sha256": "cfa75cbcc53c29b023752b0a395ff49d8202121041392735ae44771a5ec734a3",
+    "corpus_path": "E:\\PEC\\7th sem\\major\\MedRAGent\\datasets\\MedRAG\\chunk\\Psichiatry_DSM-5.jsonl",
+    "corpus_sha256": "3a7b2232b2dbb642c06fdf8ea8926c8a69aeb05f76b43b7e71d79081b29f7171",
+    "corpus_chunk_count": 4057,
+    "annotation_path": "E:\\PEC\\7th sem\\major\\MedRAGent\\experiments\\annotations\\medqa_scope_test.jsonl",
+    "annotation_sha256": "c44bd7a229fa1fedf01e095f8098609b3fa5e5823d0a7a608be96be44ca1283f",
+    "annotation_policy": "deterministic lexical candidate; not expert-reviewed",
+    "generator_model": "llama3.2:latest",
+    "embedding_model": "nomic-embed-text:latest",
+    "temperature": 0.0,
+    "top_k": 3,
+    "rrf_constant": 60,
+    "prompt_version": "baseline_v1",
+    "base_url": "http://127.0.0.1:11434",
+    "output_dir": "experiments\\results\\test_frozen_2026-11-23",
+    "output_files": [
+      "experiments\\results\\test_frozen_2026-11-23\\llm_only_test.jsonl",
+      "experiments\\results\\test_frozen_2026-11-23\\bm25_rag_test.jsonl",
+      "experiments\\results\\test_frozen_2026-11-23\\dense_rag_test.jsonl",
+      "experiments\\results\\test_frozen_2026-11-23\\hybrid_rag_test.jsonl"
+    ]
+  },
+  "test_result_files": [
+    {
+      "path": "experiments\\results\\test_frozen_2026-11-23\\bm25_rag_test.jsonl",
+      "sha256": "1d55b15107f55e01a339cc5c90fc145b970cf469fed1fd71734d25faa0e8883e",
+      "row_count": 1273,
+      "system_name": "bm25_rag"
+    },
+    {
+      "path": "experiments\\results\\test_frozen_2026-11-23\\dense_rag_test.jsonl",
+      "sha256": "2085745f48997b7f24157095472f7cac939af6283588aeb35f66fcfe96237e0a",
+      "row_count": 1273,
+      "system_name": "dense_rag"
+    },
+    {
+      "path": "experiments\\results\\test_frozen_2026-11-23\\hybrid_rag_test.jsonl",
+      "sha256": "d8c43e6b56fa5de3e1e35247852cad73d8a0ecc1a5c6a72468e1f4ea1e94f404",
+      "row_count": 1273,
+      "system_name": "hybrid_rag"
+    },
+    {
+      "path": "experiments\\results\\test_frozen_2026-11-23\\llm_only_test.jsonl",
+      "sha256": "ee07eb047d25909e1de2f60ac79070f4804300b9fbcbeaf0d43415cb85dab78f",
+      "row_count": 1273,
+      "system_name": "llm_only"
+    }
+  ],
+  "dataset_manifest": {
+    "manifest_version": 1,
+    "generated_at_utc": "2026-10-11T06:47:49.788068+00:00",
+    "project_root": "E:\\PEC\\7th sem\\major\\MedRAGent",
+    "python": {
+      "version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "implementation": "CPython",
+      "platform": "Windows-11-10.0.26300-SP0"
+    },
+    "dependencies": {
+      "numpy": "2.5.3",
+      "rank-bm25": "0.2.2",
+      "faiss-cpu": "1.15.1",
+      "sentence-transformers": "6.1.0",
+      "pyyaml": "6.0.3"
+    },
+    "datasets": {
+      "medqa_us": {
+        "file": {
+          "path": "datasets\\MedQA\\questions\\US\\dev.jsonl",
+          "bytes": 1298185,
+          "sha256": "6bdc019180ebf82908c5690b6266898341fee5fd3b807ed0201c39c93f3424c6"
+        },
+        "record_count": 1272,
+        "schema": [
+          "id",
+          "question",
+          "options",
+          "answer_index",
+          "split",
+          "source_file"
+        ],
+        "split": "dev",
+        "answer_index_min": 0,
+        "answer_index_max": 4,
+        "duplicate_questions": 0
+      },
+      "medrag_psichiatry_dsm5": {
+        "file": {
+          "path": "datasets\\MedRAG\\chunk\\Psichiatry_DSM-5.jsonl",
+          "bytes": 6732065,
+          "sha256": "3a7b2232b2dbb642c06fdf8ea8926c8a69aeb05f76b43b7e71d79081b29f7171"
+        },
+        "record_count": 4057,
+        "schema": [
+          "chunk_id",
+          "title",
+          "text",
+          "source_file",
+          "metadata"
+        ],
+        "unique_titles": 1,
+        "total_text_characters": 3110249,
+        "duplicate_texts": 1
+      }
+    }
+  },
+  "commands": {
+    "preflight": "& .\\.venv\\Scripts\\python.exe scripts\\run_frozen_test_baseline.py",
+    "execute_once": "& .\\.venv\\Scripts\\python.exe scripts\\run_frozen_test_baseline.py --execute",
+    "tests": "& .\\.venv\\Scripts\\python.exe -m unittest discover -s tests -v"
+  },
+  "claims_scope": "Frozen test claims apply only to the tested MedQA-US test split and DSM-5 evidence corpus.",
+  "clinical_status": "Not clinically validated."
+}

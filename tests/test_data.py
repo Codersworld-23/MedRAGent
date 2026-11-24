@@ -10,12 +10,21 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from medragent.data import (  # noqa: E402
     DatasetValidationError,
+    load_full_textbook_chunks,
     load_medqa_jsonl,
     load_text_chunks_jsonl,
 )
 
 
 class DatasetLoaderTests(unittest.TestCase):
+    def test_loads_all_18_textbook_chunks_with_sources(self) -> None:
+        chunks = load_full_textbook_chunks(
+            PROJECT_ROOT / "datasets" / "MedRAG" / "chunk"
+        )
+        self.assertEqual(len(chunks), 125847)
+        names = {chunk.textbook_name for chunk in chunks}
+        self.assertEqual(len(names), 18)
+        self.assertTrue(all(chunk.source_file for chunk in chunks))
     def test_loads_real_medqa_dev_schema(self) -> None:
         path = PROJECT_ROOT / "datasets" / "MedQA" / "questions" / "US" / "dev.jsonl"
         records = load_medqa_jsonl(path)

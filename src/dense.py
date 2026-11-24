@@ -71,6 +71,12 @@ class DenseRetriever:
                 text=self.chunks[int(index)].text,
                 rank=rank,
                 score=float(score),
+                source_file=self.chunks[int(index)].source_file,
+                textbook_name=(
+                    self.chunks[int(index)].textbook_name
+                    or self.chunks[int(index)].title
+                ),
+                retrieval_method="dense",
             )
             for rank, (index, score) in enumerate(ranked, start=1)
         ]

@@ -57,6 +57,7 @@ class TextChunk:
     text: str
     source_file: str
     metadata: dict[str, Any]
+    textbook_name: str = ""
 
     def as_dict(self) -> dict[str, Any]:
         """Return a JSON-serializable normalized representation."""
@@ -66,6 +67,7 @@ class TextChunk:
             "text": self.text,
             "source_file": self.source_file,
             "metadata": dict(self.metadata),
+            "textbook_name": self.textbook_name,
         }
 
 
@@ -213,6 +215,65 @@ def load_text_chunks_jsonl(path: str | Path) -> list[TextChunk]:
                 text=text.strip(),
                 source_file=str(dataset_path),
                 metadata=metadata,
+                textbook_name=title,
             )
         )
     return records
+
+
+FULL_TEXTBOOK_NAMES = (
+    "Anatomy_Gray",
+    "Biochemistry_Lippincott",
+    "Cell_Biology_Alberts",
+    "First_Aid_Step1",
+    "First_Aid_Step2",
+    "Gynecology_Novak",
+    "Histology_Ross",
+    "Immunology_Janeway",
+    "InternalMed_Harrison",
+    "Neurology_Adams",
+    "Obstentrics_Williams",
+    "Pathology_Robbins",
+    "Pathoma_Husain",
+    "Pediatrics_Nelson",
+    "Pharmacology_Katzung",
+    "Physiology_Levy",
+    "Psichiatry_DSM-5",
+    "Surgery_Schwartz",
+)
+
+
+def load_full_textbook_chunks(chunk_dir: str | Path) -> list[TextChunk]:
+    """Load and validate all 18 source-aware textbook corpora."""
+    corpus_dir = Path(chunk_dir)
+    chunks: list[TextChunk] = []
+    seen_ids: set[str] = set()
+    seen_paths: set[Path] = set()
+    for textbook_name in FULL_TEXTBOOK_NAMES:
+        path = corpus_dir / f"{textbook_name}.jsonl"
+        if not path.exists():
+            raise FileNotFoundError(f"Missing textbook corpus: {path}")
+        if path.resolve() in seen_paths:
+            raise DatasetValidationError(f"Duplicate textbook path: {path}")
+        seen_paths.add(path.resolve())
+        for chunk in load_text_chunks_jsonl(path):
+            if chunk.chunk_id in seen_ids:
+                raise DatasetValidationError(
+                    f"Duplicate chunk ID across textbooks: {chunk.chunk_id}"
+                )
+            seen_ids.add(chunk.chunk_id)
+            chunks.append(
+                TextChunk(
+                    chunk_id=chunk.chunk_id,
+                    title=chunk.title,
+                    text=chunk.text,
+                    source_file=chunk.source_file,
+                    metadata=dict(chunk.metadata),
+                    textbook_name=textbook_name,
+                )
+            )
+    if len(chunks) != 125847:
+        raise DatasetValidationError(
+            f"Full textbook corpus has {len(chunks)} chunks; expected 125847"
+        )
+    return chunks

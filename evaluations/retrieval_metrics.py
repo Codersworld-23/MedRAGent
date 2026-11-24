@@ -9,7 +9,7 @@ def _relevant_ids(record):
 	if isinstance(values, str):
 		return {values}
 	return {str(value) for value in values or []}
-
+	
 
 def evaluate_ranked_results(results, relevant_ids, k):
 	"""Calculate Recall@k, Precision@k, MRR, and nDCG for one query."""

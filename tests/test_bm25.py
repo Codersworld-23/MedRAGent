@@ -53,6 +53,12 @@ class BM25Tests(unittest.TestCase):
         self.assertEqual([result.chunk_id for result in results], ["c2", "c1"])
         self.assertEqual([result.rank for result in results], [1, 2])
 
+    def test_retrieval_preserves_source_metadata(self) -> None:
+        result = self.retriever.retrieve("anxiety", top_k=1)[0]
+        self.assertEqual(result.source_file, "test.jsonl")
+        self.assertEqual(result.textbook_name, "Anxiety")
+        self.assertEqual(result.retrieval_method, "bm25")
+
     def test_prompt_contains_only_retrieved_context(self) -> None:
         results = self.retriever.retrieve("anxiety", top_k=1)
         prompt = build_rag_prompt(record(), results)

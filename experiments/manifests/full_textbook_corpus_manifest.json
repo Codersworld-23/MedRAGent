@@ -1,0 +1,193 @@
+{
+  "manifest_version": "full_textbooks_v1",
+  "generated_at_utc": "2026-11-23T14:40:03.343810+00:00",
+  "expected_textbook_count": 18,
+  "textbook_count": 18,
+  "total_chunk_count": 125847,
+  "total_characters": 97752383,
+  "unexpected_chunk_files": [],
+  "textbooks": [
+    {
+      "name": "Anatomy_Gray",
+      "file": "datasets\\MedRAG\\chunk\\Anatomy_Gray.jsonl",
+      "sha256": "7ee624233f9bd0e1db499233dab824e396398f1c9b5b1a9a391be4aa61c1990b",
+      "chunk_count": 3017,
+      "characters": 2439533,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 0
+    },
+    {
+      "name": "Biochemistry_Lippincott",
+      "file": "datasets\\MedRAG\\chunk\\Biochemistry_Lippincott.jsonl",
+      "sha256": "baeb945f0b84cb073dfe286af5f9eb4c558a029f1c65a519e74ff425d51cabf6",
+      "chunk_count": 1973,
+      "characters": 1456914,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 7
+    },
+    {
+      "name": "Cell_Biology_Alberts",
+      "file": "datasets\\MedRAG\\chunk\\Cell_Biology_Alberts.jsonl",
+      "sha256": "e281aaf151aac1bc2e893e89f5a28bb52c4e0fd29ce94a323940d47b23909f5d",
+      "chunk_count": 7070,
+      "characters": 5172352,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 0
+    },
+    {
+      "name": "First_Aid_Step1",
+      "file": "datasets\\MedRAG\\chunk\\First_Aid_Step1.jsonl",
+      "sha256": "9b6b3e1256d09481cd6caacf70732aa1ef58c934ff957a7228efa0f2a3a2af81",
+      "chunk_count": 850,
+      "characters": 731503,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 0
+    },
+    {
+      "name": "First_Aid_Step2",
+      "file": "datasets\\MedRAG\\chunk\\First_Aid_Step2.jsonl",
+      "sha256": "49e1a4436f4c72ec94e890e95e16357d6d07e8a4b89cc6490742d621476396c8",
+      "chunk_count": 1369,
+      "characters": 1154875,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 0
+    },
+    {
+      "name": "Gynecology_Novak",
+      "file": "datasets\\MedRAG\\chunk\\Gynecology_Novak.jsonl",
+      "sha256": "75123830fe5c6293b7af05446926d8dc4cf2d2f14b5fd4fc540ef94365902c3e",
+      "chunk_count": 7947,
+      "characters": 6110362,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 1
+    },
+    {
+      "name": "Histology_Ross",
+      "file": "datasets\\MedRAG\\chunk\\Histology_Ross.jsonl",
+      "sha256": "2c68dcf3e903e648f79c6ef624b0ddfe23c98d8311d7341a005628d67386e57d",
+      "chunk_count": 4411,
+      "characters": 3269797,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 2
+    },
+    {
+      "name": "Immunology_Janeway",
+      "file": "datasets\\MedRAG\\chunk\\Immunology_Janeway.jsonl",
+      "sha256": "8c256fecfb8dfdbc8afad1966ba879994009f623bf2b28beb3caf444cd05f47b",
+      "chunk_count": 4852,
+      "characters": 3614737,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 14
+    },
+    {
+      "name": "InternalMed_Harrison",
+      "file": "datasets\\MedRAG\\chunk\\InternalMed_Harrison.jsonl",
+      "sha256": "c0f3523c74e99c152cf51aad91928c811dc30918ca9d1c68a24691525ea6bcbb",
+      "chunk_count": 32628,
+      "characters": 24123693,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 21
+    },
+    {
+      "name": "Neurology_Adams",
+      "file": "datasets\\MedRAG\\chunk\\Neurology_Adams.jsonl",
+      "sha256": "7fe80c8c8d0dab2c6645a00166fdf8dce73a717e2fcf155736f1ecf5a13abfa2",
+      "chunk_count": 12370,
+      "characters": 9017337,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 2
+    },
+    {
+      "name": "Obstentrics_Williams",
+      "file": "datasets\\MedRAG\\chunk\\Obstentrics_Williams.jsonl",
+      "sha256": "d8f53df6626566e3b0a8dc30ba76fe4fe3af1995333afcf55f7f569e1ba991fb",
+      "chunk_count": 9166,
+      "characters": 7046097,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 6
+    },
+    {
+      "name": "Pathology_Robbins",
+      "file": "datasets\\MedRAG\\chunk\\Pathology_Robbins.jsonl",
+      "sha256": "bc8d58dce0b5b94a42fafc2f47e6c3f2e0f3d86a5842d8fd2e60dc8a835e5045",
+      "chunk_count": 5297,
+      "characters": 4005098,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 10
+    },
+    {
+      "name": "Pathoma_Husain",
+      "file": "datasets\\MedRAG\\chunk\\Pathoma_Husain.jsonl",
+      "sha256": "827ed8c8a6fb99fe863b230a231208fd2ad62effc3753ba8d17fce31cf8ba2a2",
+      "chunk_count": 505,
+      "characters": 465099,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 0
+    },
+    {
+      "name": "Pediatrics_Nelson",
+      "file": "datasets\\MedRAG\\chunk\\Pediatrics_Nelson.jsonl",
+      "sha256": "701fefb07537888d5062bc6873a5ac7e746867f8eda9c0fc6e14aaeeba96fce3",
+      "chunk_count": 4260,
+      "characters": 3163095,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 57
+    },
+    {
+      "name": "Pharmacology_Katzung",
+      "file": "datasets\\MedRAG\\chunk\\Pharmacology_Katzung.jsonl",
+      "sha256": "47b79061f05293173787205e89a083350e0372beb197aceb92d2e3381c4b8334",
+      "chunk_count": 7356,
+      "characters": 5457573,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 6
+    },
+    {
+      "name": "Physiology_Levy",
+      "file": "datasets\\MedRAG\\chunk\\Physiology_Levy.jsonl",
+      "sha256": "95c7b1972afef628228efd43a032ac83c6101a60b918b835fe24fff5b6b275db",
+      "chunk_count": 4370,
+      "characters": 3225009,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 4
+    },
+    {
+      "name": "Psichiatry_DSM-5",
+      "file": "datasets\\MedRAG\\chunk\\Psichiatry_DSM-5.jsonl",
+      "sha256": "3a7b2232b2dbb642c06fdf8ea8926c8a69aeb05f76b43b7e71d79081b29f7171",
+      "chunk_count": 4057,
+      "characters": 3110249,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 2
+    },
+    {
+      "name": "Surgery_Schwartz",
+      "file": "datasets\\MedRAG\\chunk\\Surgery_Schwartz.jsonl",
+      "sha256": "e1d682541c9e4704db5fe48d61944a115e204f693e0ca360171c41e44fc3b2c0",
+      "chunk_count": 14349,
+      "characters": 14189060,
+      "unique_titles": 1,
+      "duplicate_chunk_ids": 0,
+      "duplicate_text_count": 0
+    }
+  ],
+  "source_scope": "18 medical textbook chunks",
+  "hierarchy_status": "not trusted; title/chunk order is not hierarchy"
+}

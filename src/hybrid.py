@@ -68,6 +68,9 @@ class HybridRetriever:
                 text=chunk.text,
                 rank=rank,
                 score=rrf_score(chunk.chunk_id),
+                source_file=chunk.source_file,
+                textbook_name=chunk.textbook_name,
+                retrieval_method="hybrid_rrf",
             )
             for rank, chunk in enumerate(fused, start=1)
         ]

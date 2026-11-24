@@ -30,6 +30,9 @@ class RetrievedChunk:
     text: str
     rank: int
     score: float
+    source_file: str = ""
+    textbook_name: str = ""
+    retrieval_method: str = "bm25"
 
     def as_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -61,6 +64,9 @@ class BM25Retriever:
                 text=self.chunks[index].text,
                 rank=rank,
                 score=float(scores[index]),
+                source_file=self.chunks[index].source_file,
+                textbook_name=self.chunks[index].textbook_name or self.chunks[index].title,
+                retrieval_method="bm25",
             )
             for rank, index in enumerate(ranked_indices, start=1)
         ]
