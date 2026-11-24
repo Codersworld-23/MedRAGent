@@ -1,0 +1,326 @@
+{
+  "medqa": {
+    "psychiatry": {
+      "closed_book": {
+        "n": 91,
+        "accuracy": 0.9120879120879121,
+        "ci95": [
+          0.836,
+          0.955
+        ],
+        "false_refusal_rate": 0.01098901098901099,
+        "wrongly_refused_question_ids": [
+          "dev-000918"
+        ],
+        "errors": 0,
+        "unparsed": 0,
+        "mean_rounds_used": 0.0,
+        "dsm_answerable": {
+          "n": 39,
+          "accuracy": 0.9230769230769231
+        },
+        "not_dsm_answerable": {
+          "n": 52,
+          "accuracy": 0.9038461538461539
+        },
+        "by_category": {
+          "criteria_duration": {
+            "n": 2,
+            "accuracy": 1.0
+          },
+          "diagnosis": {
+            "n": 28,
+            "accuracy": 0.9285714285714286
+          },
+          "differential": {
+            "n": 6,
+            "accuracy": 0.8333333333333334
+          },
+          "management_ethics": {
+            "n": 10,
+            "accuracy": 0.8
+          },
+          "other": {
+            "n": 8,
+            "accuracy": 0.875
+          },
+          "substance": {
+            "n": 11,
+            "accuracy": 0.9090909090909091
+          },
+          "treatment_pharmacology": {
+            "n": 26,
+            "accuracy": 0.9615384615384616
+          }
+        }
+      },
+      "rag_r1": {
+        "n": 91,
+        "accuracy": 0.9230769230769231,
+        "ci95": [
+          0.85,
+          0.962
+        ],
+        "false_refusal_rate": 0.01098901098901099,
+        "wrongly_refused_question_ids": [
+          "dev-000918"
+        ],
+        "errors": 0,
+        "unparsed": 0,
+        "mean_rounds_used": 0.989010989010989,
+        "dsm_answerable": {
+          "n": 39,
+          "accuracy": 0.9487179487179487
+        },
+        "not_dsm_answerable": {
+          "n": 52,
+          "accuracy": 0.9038461538461539
+        },
+        "by_category": {
+          "criteria_duration": {
+            "n": 2,
+            "accuracy": 1.0
+          },
+          "diagnosis": {
+            "n": 28,
+            "accuracy": 0.9285714285714286
+          },
+          "differential": {
+            "n": 6,
+            "accuracy": 1.0
+          },
+          "management_ethics": {
+            "n": 10,
+            "accuracy": 0.8
+          },
+          "other": {
+            "n": 8,
+            "accuracy": 0.875
+          },
+          "substance": {
+            "n": 11,
+            "accuracy": 0.9090909090909091
+          },
+          "treatment_pharmacology": {
+            "n": 26,
+            "accuracy": 0.9615384615384616
+          }
+        },
+        "vs_closed_book": {
+          "fixed": 1,
+          "broke": 0
+        }
+      },
+      "rag_r3": {
+        "n": 91,
+        "accuracy": 0.9230769230769231,
+        "ci95": [
+          0.85,
+          0.962
+        ],
+        "false_refusal_rate": 0.01098901098901099,
+        "wrongly_refused_question_ids": [
+          "dev-000918"
+        ],
+        "errors": 0,
+        "unparsed": 0,
+        "mean_rounds_used": 1.4285714285714286,
+        "dsm_answerable": {
+          "n": 39,
+          "accuracy": 0.9743589743589743
+        },
+        "not_dsm_answerable": {
+          "n": 52,
+          "accuracy": 0.8846153846153846
+        },
+        "by_category": {
+          "criteria_duration": {
+            "n": 2,
+            "accuracy": 1.0
+          },
+          "diagnosis": {
+            "n": 28,
+            "accuracy": 0.9642857142857143
+          },
+          "differential": {
+            "n": 6,
+            "accuracy": 1.0
+          },
+          "management_ethics": {
+            "n": 10,
+            "accuracy": 0.7
+          },
+          "other": {
+            "n": 8,
+            "accuracy": 0.875
+          },
+          "substance": {
+            "n": 11,
+            "accuracy": 0.9090909090909091
+          },
+          "treatment_pharmacology": {
+            "n": 26,
+            "accuracy": 0.9615384615384616
+          }
+        },
+        "vs_closed_book": {
+          "fixed": 2,
+          "broke": 1
+        }
+      }
+    },
+    "out_of_scope": {
+      "closed_book": {
+        "n": 30,
+        "refusal_rate": 1.0,
+        "ci95": [
+          0.886,
+          1.0
+        ],
+        "answered_anyway": 0,
+        "answered_question_ids": [],
+        "errors": 0
+      },
+      "rag_r1": {
+        "n": 30,
+        "refusal_rate": 1.0,
+        "ci95": [
+          0.886,
+          1.0
+        ],
+        "answered_anyway": 0,
+        "answered_question_ids": [],
+        "errors": 0
+      },
+      "rag_r3": {
+        "n": 30,
+        "refusal_rate": 1.0,
+        "ci95": [
+          0.886,
+          1.0
+        ],
+        "answered_anyway": 0,
+        "answered_question_ids": [],
+        "errors": 0
+      }
+    }
+  },
+  "generated": {
+    "rounds": {
+      "1": {
+        "n": 78,
+        "errors": 1,
+        "hit_rate": 0.7792207792207793,
+        "recall": 0.6926406926406927,
+        "all_expected_found": 0.6103896103896104,
+        "mrr": 0.5720779220779222,
+        "correctness": 4.220779220779221,
+        "completeness": 4.038961038961039,
+        "faithfulness": 4.337662337662338,
+        "wrongly_refused": 2,
+        "answers_with_citations": 0.935064935064935,
+        "citations_valid": 1.0,
+        "mean_rounds_used": 0.974025974025974,
+        "by_type": {
+          "clinical_application": {
+            "n": 7,
+            "recall": 0.8571428571428571,
+            "correctness": 4.428571428571429
+          },
+          "course_and_risk": {
+            "n": 5,
+            "recall": 0.8,
+            "correctness": 4.2
+          },
+          "definition": {
+            "n": 7,
+            "recall": 0.5714285714285714,
+            "correctness": 3.857142857142857
+          },
+          "diagnostic_criteria": {
+            "n": 19,
+            "recall": 0.8421052631578947,
+            "correctness": 4.578947368421052
+          },
+          "diagnostic_distinction": {
+            "n": 9,
+            "recall": 0.6666666666666666,
+            "correctness": 4.444444444444445
+          },
+          "multi_chunk_adjacent": {
+            "n": 9,
+            "recall": 0.6666666666666666,
+            "correctness": 4.0
+          },
+          "multi_chunk_distant": {
+            "n": 15,
+            "recall": 0.4222222222222222,
+            "correctness": 3.533333333333333
+          },
+          "safety_or_limitation": {
+            "n": 6,
+            "recall": 0.8333333333333334,
+            "correctness": 5.0
+          }
+        }
+      },
+      "3": {
+        "n": 78,
+        "errors": 0,
+        "hit_rate": 0.7948717948717948,
+        "recall": 0.7350427350427351,
+        "all_expected_found": 0.6794871794871795,
+        "mrr": 0.5740537240537241,
+        "correctness": 4.4743589743589745,
+        "completeness": 4.333333333333333,
+        "faithfulness": 4.538461538461538,
+        "wrongly_refused": 2,
+        "answers_with_citations": 0.9615384615384616,
+        "citations_valid": 1.0,
+        "mean_rounds_used": 1.5,
+        "by_type": {
+          "clinical_application": {
+            "n": 7,
+            "recall": 0.8571428571428571,
+            "correctness": 4.428571428571429
+          },
+          "course_and_risk": {
+            "n": 5,
+            "recall": 0.8,
+            "correctness": 5.0
+          },
+          "definition": {
+            "n": 7,
+            "recall": 0.5714285714285714,
+            "correctness": 3.5714285714285716
+          },
+          "diagnostic_criteria": {
+            "n": 19,
+            "recall": 0.8421052631578947,
+            "correctness": 4.631578947368421
+          },
+          "diagnostic_distinction": {
+            "n": 9,
+            "recall": 0.7777777777777778,
+            "correctness": 4.555555555555555
+          },
+          "multi_chunk_adjacent": {
+            "n": 9,
+            "recall": 0.8333333333333334,
+            "correctness": 4.333333333333333
+          },
+          "multi_chunk_distant": {
+            "n": 16,
+            "recall": 0.4895833333333333,
+            "correctness": 4.375
+          },
+          "safety_or_limitation": {
+            "n": 6,
+            "recall": 0.8333333333333334,
+            "correctness": 5.0
+          }
+        }
+      }
+    }
+  }
+}
